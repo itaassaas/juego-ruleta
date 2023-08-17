@@ -10,7 +10,7 @@ ruleta.addEventListener('click', girar);
 giros = 0;
 
 function girar(){
-  if (giros < 1) {
+  if (giros < 100) {
     let rand = Math.random() * 7200;
     calcular(rand);
     giros++;
