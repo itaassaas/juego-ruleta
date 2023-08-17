@@ -7,38 +7,26 @@
   <title>Ruleta Boxi Effix</title>
   <link rel="stylesheet" href="css/estilo.css">
   <link rel="icon" href="data:,">
-
 </head>
 
 <body>
-
-
-
- 
-
   <div class="vara"></div>
-  <div>
     <img src="image/imagen.png" id="ruleta">
   </div>
   <div>
     <div id="sonido" style="display: none;">
       <iframe src="sonido/ruleta.mp3" id="audio"></iframe>
-
     </div>
   </div>
-
-
-
+ </div>
 
   <div id="premio">
-
-    <table style=" margin: 0 auto;">
+    <table style="margin: 0 auto;">
       <tr>
         <td>
           <p class="elije">TE GANASTE:</p>
         </td>
         <td><img src="image/cortesia.png" class="imgSorpresa"></td>
-
       </tr>
       <tr>
         <td>
@@ -46,14 +34,36 @@
         </td>
       </tr>
     </table>
-
   </div>
 
-
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="js/script.js"></script>
- 
+  <script>
+    // Configura la inicialización de Firebase con tus propias credenciales
+    const firebaseConfig = {
+      apiKey: "AIzaSyDZTg6zn3mUk90IaBOhKCa6l4_A69-OLWY",
+      authDomain: "boxi-express-2023.firebaseapp.com",
+      projectId: "boxi-express-2023",
+      storageBucket: "boxi-express-2023.appspot.com",
+      messagingSenderId: "335692610148",
+      appId: "1:335692610148:web:73fab5f1c4e90d94503d71",
+      measurementId: "G-ECQZ0XCR15"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    // Observa los cambios en la base de datos para detectar el clic en "girar"
+    firebase.database().ref('acciones').on('value', (snapshot) => {
+      const accion = snapshot.val().accion;
+      if (accion === 'girar') {
+        girar(); // Llama a la función girar() de script.js
+        // Restablece la base de datos para evitar que se ejecute continuamente
+        firebase.database().ref('acciones').set({ accion: null });
+      }
+    });
+  </script>
 </body>
 
 </html>

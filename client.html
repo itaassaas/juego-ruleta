@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cliente Ruleta</title>
+  <!-- Incluye las bibliotecas de Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/boton.css">
+</head>
+<body>
+
+
+
+
+  <!-- <button id="girarButton">Girar</button> -->
+
+  <button class="self-destruct center" id="girarButton">
+    <span class="top"></span>
+    <span class="middle"></span>
+    <span class="bottom"></span>
+  </button>
+
+  <script>
+    // Configura la inicialización de Firebase con tus propias credenciales
+    const firebaseConfig = {
+        apiKey: "AIzaSyDZTg6zn3mUk90IaBOhKCa6l4_A69-OLWY",
+        authDomain: "boxi-express-2023.firebaseapp.com",
+        projectId: "boxi-express-2023",
+        storageBucket: "boxi-express-2023.appspot.com",
+        messagingSenderId: "335692610148",
+        appId: "1:335692610148:web:73fab5f1c4e90d94503d71",
+        measurementId: "G-ECQZ0XCR15"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    const girarButton = document.getElementById('girarButton');
+
+    girarButton.addEventListener('click', () => {
+      // Establece el valor "girar" en la base de datos de Firebase
+      firebase.database().ref('acciones').set({ accion: 'girar' });
+    });
+  </script>
+</body>
+</html>
