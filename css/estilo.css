@@ -4,21 +4,22 @@
 }
 
 body {
-    background-image: url("http://127.0.0.1:5500/image/fondo.png ");
+    background:#ffffff;
 }
 
 .vara {
-    height: 70px;
-    width: 15px;
-    background-color: #aaa;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 40px solid #fb0000;
     margin: auto;
     position: relative;
     top: 10px;
-    border-radius: 0px 0px 8px 8px;
-    border: 1px solid #000;
-    border-top: 5px solid #000;
     z-index: 1000;
+
 }
+
 
 img {
     z-index: 100;
@@ -26,10 +27,11 @@ img {
 }
 
 #premio {
-    color: white;
+    color: rgb(0, 0, 0);
     position: absolute;
     font-weight: bold;
     font-size: 25px;
     padding-top: 20px;
     padding: 20px;
 }
+
