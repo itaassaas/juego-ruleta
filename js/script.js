@@ -10,8 +10,10 @@ ruleta.addEventListener('click', girar);
 giros = 0;
 
 function girar(){
-  if (giros < 100) {
+  if (giros < 1000) {
+
     let rand = Math.random() * 7200;
+    console.log("el numero principal es:",rand);
     calcular(rand);
     giros++;
     var sonido = document.querySelector('#audio');
@@ -44,8 +46,11 @@ function premio(premios){
 }
 function calcular(rand) {
 
+
   valor = rand / 360;
+  console.log("el numero 1 es:",valor);
   valor = (valor - parseInt(valor.toString().split(".")[0]))* 360;
+  console.log("el numero 2 es:",valor);
   ruleta.style.transform = "rotate("+rand+"deg)";
 
   setTimeout(() => {

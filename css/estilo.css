@@ -4,8 +4,39 @@
 }
 
 body {
-    background:#ffffff;
+    background-image: url("/image/fondo.png");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Media Queries */
+  @media screen and (max-width: 768px) {
+    body {
+      background-image: url("/image/fondo.png");
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    body {
+      background-image: url("/image/fondo.png");
+    }
+  }
+  
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url("/image/fondo.png");
+  }
 }
+
+@media screen and (max-width: 480px) {
+  body {
+    background-image: urlurl("/image/fondo.png");
+  }
+}
+
+
 
 .vara {
     width: 0;
@@ -24,10 +55,12 @@ body {
 img {
     z-index: 100;
     transition: all 5s;
+    width: 600px; /* Cambiar el ancho de la imagen a tu gusto */
+
 }
 
 #premio {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     position: absolute;
     font-weight: bold;
     font-size: 25px;
