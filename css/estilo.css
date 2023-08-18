@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url("/image/fondo.png");
+    background-image: url("https://itaas.com.co/juego-ruleta/image/fondo.png");
     background-size: cover;
     background-position: center;
   }
@@ -12,13 +12,13 @@ body {
   /* Media Queries */
   @media screen and (max-width: 768px) {
     body {
-      background-image: url("/image/fondo.png");
+      background-image: url("https://itaas.com.co/juego-ruleta/image/fondo.png");
     }
   }
   
   @media screen and (max-width: 480px) {
     body {
-      background-image: url("/image/fondo.png");
+      background-image: url("https://itaas.com.co/juego-ruleta/image/fondo.png");
     }
   }
   
@@ -26,13 +26,13 @@ body {
 /* Media Queries */
 @media screen and (max-width: 768px) {
   body {
-    background-image: url("/image/fondo.png");
+    background-image: url("https://itaas.com.co/juego-ruleta/image/fondo.png");
   }
 }
 
 @media screen and (max-width: 480px) {
   body {
-    background-image: urlurl("/image/fondo.png");
+    background-image: urlurl("https://itaas.com.co/juego-ruleta/image/fondo.png");
   }
 }
 
@@ -60,13 +60,38 @@ img {
 }
 
 #premio {
-    color: rgb(255, 255, 255);
-    position: absolute;
-    font-weight: bold;
-    font-size: 25px;
-    padding-top: 20px;
-    padding: 20px;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  font-weight: bold;
+  font-size: 18px;
+  padding-top: 10px;
+  padding: 10px;
+ 
+  background-color: white;
+  border-radius: 5px; 
+
 }
+
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio (change this value as needed) */
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
 
 
 

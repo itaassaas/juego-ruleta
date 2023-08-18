@@ -1,8 +1,10 @@
 const ruleta = document.querySelector('#ruleta');
 
+
 document.addEventListener('keydown', function (event) {
   if (event.keyCode === 13) {
     girar();
+
   }
 });
 
@@ -18,7 +20,7 @@ function girar(){
     giros++;
     var sonido = document.querySelector('#audio');
     sonido.setAttribute('src', 'sonido/ruleta.mp3');
-    document.querySelector('.contador').innerHTML = 'TURNOS: ' + giros; 
+    document.querySelector('.contador').innerHTML = 'Premios Entregados: ' + giros; 
   }else{
     Swal.fire({
       icon: 'success',
@@ -30,7 +32,7 @@ function girar(){
       if (result.value == true) {
         giros = 0;
          document.querySelector('.elije').innerHTML = 'TE GANASTE: ';
-         document.querySelector('.contador').innerHTML = 'TURNOS: ' + giros;        
+         document.querySelector('.contador').innerHTML = 'Premios Entregados: ' + giros;        
       }
     })
   }
@@ -43,6 +45,18 @@ function premio(premios){
 
   document.querySelector('.elije').innerHTML = 'TE GANASTE: ' + premios;
 
+  if (premios !== "") {
+    Swal.fire({
+      icon: 'success',
+      title: '¡Felicidades!',
+      text: 'Has ganado '+ premios + ' como premio',
+      timer: 5000,
+      timerProgressBar: true,
+      showConfirmButton: false
+    });
+  
+  } 
+  confetic();
 }
 function calcular(rand) {
 
@@ -84,3 +98,36 @@ function calcular(rand) {
  }, 5000);
 
 }
+
+function confetic(){
+
+  const end = Date.now() + 6 * 1000;
+
+  // go Buckeyes!
+  const colors = ["#bb0000", "#ffffff"];
+  
+  (function frame() {
+    confetti({
+      particleCount: 2,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+      colors: colors,
+    });
+  
+    confetti({
+      particleCount: 2,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+      colors: colors,
+    });
+  
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+
+
+}
+

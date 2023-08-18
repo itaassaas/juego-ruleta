@@ -1,0 +1,22 @@
+@keyframes filling {
+  from{
+    background-position: center 25%;
+  }
+  to {
+    background-position: center 50%;
+  }
+}
+
+.container-text {
+  background-image:  url(https://static.pexels.com/photos/4827/nature-forest-trees-fog.jpeg);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  color:  #FFFFFF;
+  padding-top: 20px;
+  font-size: 100px;
+  font-family: 'roboto', sans-serif;
+  font-weight:1000;
+  letter-spacing: -4px; /* Ajusta el valor según tus preferencias */
+  
+  animation: filling 5s ease forwards;
+}

@@ -4,10 +4,6 @@
     --button-base-color: gray;
   }
   
-  body {
-    background-color: lightgray;
-  }
-  
   .center {
     position: absolute;
     top: 50%;

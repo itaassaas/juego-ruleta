@@ -6,10 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ruleta Boxi Effix</title>
   <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/texto.css">
   <link rel="icon" href="data:,">
 </head>
 
 <body>
+  <div id="premio">
+    <table style="margin: 0 auto;">
+      <tr>
+        <td>
+          <p class="elije">GANASTE:</p>
+        </td>
+        <!-- <td><img src="image/cortesia.png" class="imgSorpresa"></td> -->
+      </tr>
+      <tr>
+        <td>
+          <p class="contador">Premios entregados: 0</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+ 
 
   <div class="container">
     <div class="vara"></div>
@@ -25,27 +44,16 @@
   </div>
  </div>
 
-  <div id="premio">
-    <table style="margin: 0 auto;">
-      <tr>
-        <td>
-          <p class="elije">TE GANASTE:</p>
-        </td>
-        <!-- <td><img src="image/cortesia.png" class="imgSorpresa"></td> -->
-      </tr>
-      <tr>
-        <td>
-          <p class="contador">TURNOS: 0</p>
-        </td>
-      </tr>
-    </table>
-  </div>
+  
 
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js"></script>
+  
+
   <script>
     // Configura la inicialización de Firebase con tus propias credenciales
     const firebaseConfig = {
@@ -69,6 +77,20 @@
       }
     });
   </script>
+
+
+  <div class="container-text">
+    Ruleta Boxi
+</div>
+
+
+
+
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/ZAzitFBUECs?playlist=ZAzitFBUECs&loop=1&autoplay=1&controls=0&mute=1" frameborder="0" allowfullscreen="true"></iframe>
+
+  </div>
+
 </body>
 
 </html>
